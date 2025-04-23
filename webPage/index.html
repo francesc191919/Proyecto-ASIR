@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personajes - Rick and Morty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/index.js" defer></script>
+</head>
+<body class="bg-dark text-light">
+  <div class="container py-4">
+    <header class="mb-5 pb-3 border-bottom border-info">
+      <h1 class="text-center text-info">Personajes de Rick and Morty</h1>
+    </header>
+
+    <div class="bg-secondary bg-opacity-25 p-4 rounded mb-4">
+      <div class="row g-3 mb-2">
+        <div class="col-md-6">
+          <label for="filtrarNombre" class="form-label">Buscar por nombre:</label>
+          <input type="text" id="filtrarNombre" class="form-control bg-dark text-light" placeholder="Nombre del personaje">
+          
+        </div>
+        <div class="col-md-4">
+          <label for="filtrarEpisodio" class="form-label">Filtrar por episodio:</label>
+          <select id="filtrarEpisodio" class="form-select bg-dark text-light ">
+            <option value="">Todos los episodios</option>
+            <!-- Opciones para llenar JS -->
+          </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button class="btn btn-info w-100 text-dark fw-bold" onclick="filtrarPersonajes()">Filtrar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards de personajes -->
+    <div id="personajesContainer" class="row g-4">
+      <!-- aquí se insertan los personajes con js -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 bg-secondary bg-opacity-25 shadow border-0">
+          <a href="views/detalle.html?id=" class="text-decoration-none">
+            <div class="row g-0">
+              <div class="col-4">
+                <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title text-info mb-3 fw-bold">Rick Sanchez</h5>
+                  <p class="card-text text-light mb-3">Localización</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!---->
+    </div>
+  </div>
+
+  <!-- Template de card -->
+  <template id="cardTemplate">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 bg-secondary bg-opacity-25 border-0">
+        <a href="detalle.html?id=">
+          <img src="" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-info mb-3 fw-bold"></h5>
+            <p class="card-text text-light mb-3"></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </template>
+  <template id="cardTemplate">
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100 bg-secondary bg-opacity-25 shadow border-0">
+      <a href="detalle.html?id=" class="text-decoration-none">
+        <div class="row g-0">
+          <div class="col-4">
+            <img src="" class="img-fluid rounded-start" alt="">
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title text-info mb-3 fw-bold"></h5>
+              <p class="card-text text-light mb-3"></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  </template>
+</body>
+</html>
