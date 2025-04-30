@@ -12,9 +12,14 @@
     <header class="mb-5 pb-3 border-bottom border-info">
       <h1 class="text-center text-info">Personajes de Rick and Morty</h1>
     </header>
-    
+    <div id="sinDatos" class="alert alert-danger d-none" role="alert">
+      <strong>Error:</strong> No se pudo cargar el personaje.
+    </div>
+    <div id="cargando" class="d-none">
+      <strong>Espera de procesamiento JSON ...</strong>
+    </div>
 
-    <div class="card bg-secondary bg-opacity-25 shadow border-0 rounded-3">
+    <div class="card bg-secondary bg-opacity-25 shadow border-0 rounded-3" id="cardPersonaje">
       <div class="row g-0">
         <div class="col-md-4 p-3">
           <img id="imagen" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" class="img-fluid rounded-3" alt="">
