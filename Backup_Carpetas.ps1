@@ -6,7 +6,7 @@ $carpetasImportantes = @(
     # "$env:USERPROFILE\Downloads"  # ← Descomenta si quieres incluir Descargas
 )
 
-# Carpeta de destino en disco E:
+# Carpeta de destino en disco E:\
 $destinoBase = "E:\Backup_Usuario"
 
 # Crear carpeta base si no existe
@@ -27,7 +27,8 @@ foreach ($origen in $carpetasImportantes) {
     # Copiar usando Robocopy
     Robocopy $origen $destino /MIR /R:2 /W:5 /NFL /NDL /NP /LOG+:"$env:USERPROFILE\Documents\log_backup.txt"
 
-    Write-Output "✔ Copiada: $nombreCarpeta a $destino"
+    Write-Output "Copiada: $nombreCarpeta a $destino"
 }
 
-Write-Output "✅ Copia de seguridad finalizada."
+Write-Output "Copia de seguridad finalizada."
+

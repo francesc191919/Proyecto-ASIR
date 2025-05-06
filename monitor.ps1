@@ -7,7 +7,7 @@ if (-not (Test-Path $logPath)) {
 }
 
 # Obtener métricas
-$cpu = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples[0].CookedValue
+$cpu = (Get-CimInstance Win32_Processor | Measure-Object -Property LoadPercentage -Average).Average
 $mem = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1024  # En MB
 
 # Fecha y hora
